@@ -1,8 +1,3 @@
-gitcom
-======
-
-Common git commands
-
 ### Checkout a remote branch with tracking.
 `git checkout --track -b <branch> origin/<branch>` -B to force it.
 
@@ -28,3 +23,6 @@ Common git commands
 
 ### Undo last push
 `git reset --hard HEAD~1 && git push -f origin master`
+
+### Push local feature branch to upstream master
+`git push origin feature-x:master`
