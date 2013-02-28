@@ -26,3 +26,6 @@
 
 ### Push local feature branch to upstream master
 `git push origin feature-x:master`
+
+### Rebase on upstream master
+`git fetch upstream && git rebase upstream/master`
