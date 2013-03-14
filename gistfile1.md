@@ -30,5 +30,5 @@
 ### Rebase on upstream master
 `git fetch upstream && git rebase upstream/master`
 
-### Manage the set of repositories ("remotes") whose branches you track.
+### List the set of repositories ("remotes") whose branches you track.
 `git remote -v`
