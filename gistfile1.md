@@ -5,6 +5,9 @@
 `git push --set-upstream origin <branch>`<br>
 `git push`
 
+### Push a local branch to a different remote branch.
+`git push origin <local-branch>:<remote-branch>`
+
 ### Commit all changes with a message.
 `git commit -am <msg>`
 
@@ -24,8 +27,8 @@
 ### Undo last push
 `git reset --hard HEAD~1 && git push -f origin master`
 
-### Push local feature branch to upstream master
-`git push origin feature-x:master`
-
 ### Rebase on upstream master
 `git fetch upstream && git rebase upstream/master`
+
+### Manage the set of repositories ("remotes") whose branches you track.
+`git remote -v`
