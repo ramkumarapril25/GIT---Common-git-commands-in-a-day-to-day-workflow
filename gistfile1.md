@@ -6,7 +6,10 @@
 `git push`
 
 ### Push a local branch to a different remote branch.
-`git push origin <local-branch>:<remote-branch>`
+`git push origin <local-branch>:<remote-branch>` -f to force it.
+
+### Squash a number of commits into a single commit.
+`git rebase -i HEAD~<number-of-commits>`
 
 ### Commit all changes with a message.
 `git commit -am <msg>`
