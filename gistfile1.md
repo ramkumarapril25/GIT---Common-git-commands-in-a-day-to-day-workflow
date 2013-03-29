@@ -1,6 +1,9 @@
 ### Checkout a remote branch with tracking.
 `git checkout --track -b <branch> origin/<branch>` -B to force it.
 
+### Checkout fork's master branch with upstream/master as remote.
+`git checkout -b master upstream/master`
+
 ### Push a local branch for the first time.
 `git push --set-upstream origin <branch>`<br>
 `git push`
