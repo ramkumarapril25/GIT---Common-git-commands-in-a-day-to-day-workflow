@@ -38,3 +38,6 @@
 
 ### List the set of repositories ("remotes") whose branches you track.
 `git remote -v`
+
+### Checkout as CRLF, Commit as LF
+`git config --global core.autocrlf true`
