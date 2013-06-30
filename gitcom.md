@@ -1,10 +1,10 @@
 ## Initial Setup
 
 ### Create an empty git repo or reinitialize an existing one
-[git init](https://www.kernel.org/pub/software/scm/git/docs/git-init.html)
 ```shell
 git init
 ```
+[git-init manual](https://www.kernel.org/pub/software/scm/git/docs/git-init.html)
 
 ### Checkout a remote branch with tracking.
 `git checkout --track -b <branch> origin/<branch>` -B to force it.
