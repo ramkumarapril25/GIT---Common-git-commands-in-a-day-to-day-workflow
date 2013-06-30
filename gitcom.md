@@ -3,8 +3,11 @@
 ### [git init](https://www.kernel.org/pub/software/scm/git/docs/git-init.html)
 Create an empty git repo or reinitialize an existing one
 
+### create a fork
+Click the "Fork" button at the top-right of any repository's GitHub page.
+
 ### [git clone](https://www.kernel.org/pub/software/scm/git/docs/git-clone.html)
-Clone a repo into a new directory
+Clone the codepainter repo into a new directory called codepainter:
 ```shell
 $ git clone https://github.com/jedhunsaker/codepainter.git codepainter
 ```
