@@ -3,13 +3,20 @@
 ### [git init](https://www.kernel.org/pub/software/scm/git/docs/git-init.html)
 Create an empty git repo or reinitialize an existing one
 
-### [create a fork](https://help.github.com/articles/fork-a-repo)
+### [fork a repo](https://help.github.com/articles/fork-a-repo#step-1-fork-the-spoon-knife-repository)
 Click the "Fork" button at the top-right of any repository's GitHub page.
 
 ### [git clone](https://www.kernel.org/pub/software/scm/git/docs/git-clone.html)
 Clone the codepainter repo into a new directory called codepainter:
 ```shell
 $ git clone https://github.com/jedhunsaker/codepainter.git codepainter
+```
+
+### [setup remotes](https://help.github.com/articles/fork-a-repo#step-3-configure-remotes)
+```command-line
+$ git remote -v
+$ git remote add upstream https://github.com/username/codepainter.git
+$ git fetch upstream
 ```
 
 ### Checkout a remote branch with tracking.
