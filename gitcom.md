@@ -2,8 +2,8 @@
 
 ### Create an empty git repo or reinitialize an existing one
 [git init](https://www.kernel.org/pub/software/scm/git/docs/git-init.html)
-Example:
-```bash
+    Example:
+```shell
 git init
 ```
 
