@@ -1,13 +1,9 @@
 ## Initial Setup
 
 ### [git init](https://www.kernel.org/pub/software/scm/git/docs/git-init.html)
-
 Create an empty git repo or reinitialize an existing one
 
-[git-init manual]
-
 ### [git clone](https://www.kernel.org/pub/software/scm/git/docs/git-clone.html)
-
 ```shell
 $ git clone https://github.com/jedhunsaker/codepainter.git codepainter
 ```
