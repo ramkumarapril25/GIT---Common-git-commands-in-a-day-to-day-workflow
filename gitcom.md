@@ -13,7 +13,7 @@ $ git clone https://github.com/jedhunsaker/codepainter.git codepainter
 ```
 
 ### [setup remotes](https://help.github.com/articles/fork-a-repo#step-3-configure-remotes)
-```command line
+```shell
 $ git remote -v
 $ git remote add upstream https://github.com/username/codepainter.git
 $ git fetch upstream
