@@ -4,10 +4,10 @@
 Create an empty git repo or reinitialize an existing one
 
 ### [git clone](https://www.kernel.org/pub/software/scm/git/docs/git-clone.html)
+Clone a repo into a new directory
 ```shell
 $ git clone https://github.com/jedhunsaker/codepainter.git codepainter
 ```
-Clone a repo into a new directory
 
 ### Checkout a remote branch with tracking.
 `git checkout --track -b <branch> origin/<branch>` -B to force it.
