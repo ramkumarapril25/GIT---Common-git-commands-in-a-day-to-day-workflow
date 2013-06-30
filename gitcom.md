@@ -1,19 +1,17 @@
 ## Initial Setup
 
-### git init
+### [git init](https://www.kernel.org/pub/software/scm/git/docs/git-init.html)
 
 Create an empty git repo or reinitialize an existing one
 
-[git-init manual](https://www.kernel.org/pub/software/scm/git/docs/git-init.html)
+[git-init manual]
 
-### git clone
+### [git clone](https://www.kernel.org/pub/software/scm/git/docs/git-clone.html)
 
 ```shell
 $ git clone https://github.com/jedhunsaker/codepainter.git codepainter
 ```
 Clone a repo into a new directory
-
-[git-clone manual](https://www.kernel.org/pub/software/scm/git/docs/git-clone.html)
 
 ### Checkout a remote branch with tracking.
 `git checkout --track -b <branch> origin/<branch>` -B to force it.
