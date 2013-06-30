@@ -24,6 +24,42 @@ $ git remote add upstream https://github.com/username/codepainter.git
 $ git fetch upstream
 ```
 
+
+## Every-day Commands
+
+### [Branching](https://www.kernel.org/pub/software/scm/git/docs/git-checkout.html)
+
+When working on a fork, you could be switching between different branches quite commonly. As such, you generally want to stay off the master branch and work on your own feature branches so that master is always clean and you can base new branches off of it.
+```shell
+$ git checkout -b feature_x
+```
+
+If upstream has a special develop branch or something, you can check that branch out separately, but setup tracking so you can sync it up from time to time. Like the master branch, don't work directly on this one. Try to keep it clean.
+```shell
+$ git checkout -b develop --track upstream/develop
+```
+
+Maybe you made some progress on a branch at home, but now you want to check it out at work. In that case, you're dealing with your own fork's branch, so you'll checkout from origin.
+```shell
+$ git checkout -b feature_x --track origin/feature_x
+```
+
+### [Switching Branches](https://www.kernel.org/pub/software/scm/git/docs/git-checkout.html)
+
+Now, you can easily switch between branches with git checkout.
+```shell
+$ git checkout master
+$ git checkout develop
+$ git checkout feature_x
+```
+
+
+
+### [Push](file:///C:/Users/Jed/AppData/Local/GitHub/PortableGit_ca477551eeb4aea0e4ae9fcd3358bd96720bb5c8/doc/git/html/git-push.html)
+```shell
+$ git push origin master
+
+
 ### Checkout a remote branch with tracking.
 `git checkout --track -b <branch> origin/<branch>` -B to force it.
 
