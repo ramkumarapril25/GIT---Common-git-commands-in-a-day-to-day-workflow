@@ -31,18 +31,21 @@ $ git fetch upstream
 
 When working on a fork, you could be switching between different branches quite commonly. As such, you generally want to stay off the master branch and work on your own feature branches so that master is always clean and you can base new branches off of it.
 ```shell
-$ git checkout -b feature_x
+$ git checkout -b <new_branch_name>
 ```
 
-If upstream has a special develop branch or something, you can check that branch out separately, but setup tracking so you can sync it up from time to time. Like the master branch, don't work directly on this one. Try to keep it clean.
+If upstream has a special develop branch or something, you can checkout that branch separately, but setup tracking so you can sync it up from time to time. Like the master branch, don't work directly on this one. Try to keep it clean.
 ```shell
-$ git checkout -b develop --track upstream/develop
+$ git checkout -b <new_branch_name> --track upstream/<remote_branch_to_track>
 ```
 
 Maybe you made some progress on a branch at work, but now you want to continue work at home. In that case, you're dealing with your own fork's branch, so you'll checkout from origin.
 ```shell
-$ git checkout -b feature_x --track origin/feature_x
+$ git checkout -b <new_branch_name> --track origin/<remote_branch_to_track>
 ```
+
+Use the `-B` option flag to force it.
+
 
 ### [Switching Branches](https://www.kernel.org/pub/software/scm/git/docs/git-checkout.html)
 
@@ -54,6 +57,7 @@ $ git checkout feature_x
 $ git config --global alias.co 'checkout'
 $ git co master
 ```
+
 
 ### [Status](https://www.kernel.org/pub/software/scm/git/docs/git-status.html)
 
@@ -107,34 +111,24 @@ An interactive text file is displayed. You'll see the word "pick" to the left of
 
 
 ### [Pushing](https://www.kernel.org/pub/software/scm/git/docs/git-push.html)
+
+Push a local branch for the first time:
 ```shell
-$ git push origin master
+$ git push --set-upstream origin <branch>
+$ git push
+```
+
+Push a local branch to a different remote branch:
+```shell
+$ git push origin <local_branch>:<remote_branch>
+```
+
+Use the `-f` option flag to force it.
 
 
-### Checkout a remote branch with tracking.
-`git checkout --track -b <branch> origin/<branch>` -B to force it.
+### [Fetching](https://www.kernel.org/pub/software/scm/git/docs/git-fetch.html)
 
-### Checkout fork's master branch with upstream/master as remote.
-`git checkout -b master upstream/master`
 
-### Push a local branch for the first time.
-`git push --set-upstream origin <branch>`<br>
-`git push`
-
-### Push a local branch to a different remote branch.
-`git push origin <local-branch>:<remote-branch>` -f to force it.
-
-### Squash a number of commits into a single commit.
-`git rebase -i HEAD~<number-of-commits>`
-
-### Commit all changes with a message.
-`git commit -am <msg>`
-
-### Remove a local branch.
-`git branch -d <local_branch>` -D to force it.
-
-### Remove a remote branch.
-`git push origin :<remote_branch>`
 
 ### Manually set tracking.
 `git config branch.<local_branch>.remote origin`<br>
@@ -154,3 +148,19 @@ $ git push origin master
 
 ### Checkout as CRLF, Commit as LF
 `git config --global core.autocrlf true`
+```
+
+
+### [Deleting Branches]()
+
+Delete a local branch:
+```shell
+$ git branch -d <local_branch>
+```
+
+Use the `-D` option flag to force it.
+
+Delete a remote branch on origin:
+```shell
+$ git push origin :<remote_branch>
+```
