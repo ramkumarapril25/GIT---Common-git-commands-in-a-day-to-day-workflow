@@ -114,6 +114,19 @@ $ git commit -am "Fixed IE issues"
 ```
 
 
+### [Undoing Commits](https://www.kernel.org/pub/software/scm/git/docs/git-reset.html)
+
+The following command will undo your most recent commit and put those changes back into staging, so you don't lose any work:
+```shell
+$ git reset --soft HEAD~1
+```
+
+The next one will completely delete the commit and throw away any changes. Be absolutely sure this is what you want:
+```shell
+$ git reset --hard HEAD~1
+```
+
+
 ### [Squashing Commits](https://www.kernel.org/pub/software/scm/git/docs/git-rebase.html)
 
 Maybe you have 4 commits, but you haven't pushed anything yet and you want to put everything into one commit so your boss doesn't have to read a bunch of garbage during code review.
@@ -140,7 +153,7 @@ $ git push origin <local_branch>:<remote_branch>
 Use the `-f` option flag to force it.
 
 
-### Undo Last Push
+### [Undo Last Push](https://www.kernel.org/pub/software/scm/git/docs/git-reset.html)
 
 Some would say this is bad practice. Once you push something you shouldn't overwrite those changes. Instead, you're supposed to create a new commit that reverts the changes in the last one. So, technically, you shouldn't do this, but... you can?
 ```shell
