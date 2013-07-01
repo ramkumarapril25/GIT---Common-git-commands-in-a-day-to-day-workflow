@@ -128,9 +128,51 @@ Use the `-f` option flag to force it.
 
 ### [Fetching](https://www.kernel.org/pub/software/scm/git/docs/git-fetch.html)
 
+Fetch changes from upstream:
+```shell
+$ git fetch upstream
+```
+
+Fetch changes from both origin and upstream in the same shot:
+```shell
+$ git fetch --multiple origin upstream
+```
+
+
+### [Merging](https://www.kernel.org/pub/software/scm/git/docs/git-merge.html)
+
+To be honest, I haven't used this command in quite some time. In my experience, it has created merge bubbles that have overwritten mine or others' code. For a better workflow, refer to rebasing, below.
+
+Nonetheless, here's how you merge-in changes from origin's `feature_x` branch:
+```shell
+$ git fetch origin
+$ git merge origin/feature_x
+```
+
+
+### [Pulling](https://www.kernel.org/pub/software/scm/git/docs/git-pull.html)
+
+Pulling is just doing a fetch followed by a merge. If you know your branch is clean (e.g., master branch), go ahead and get the latest changes. There will be no merge conflicts as long as your branch is clean.
+```shell
+$ git pull origin/feature_x
+```
+
+
+### [Rebasing](https://www.kernel.org/pub/software/scm/git/docs/git-rebase.html)
+
+Rebasing is a way of rewriting history. In place of merge, what this does is stacks your commits on top of commits that are already pushed up. In this case, you want to stack your commits on top of `origin/feature_x`:
+```shell
+$ git rebase origin/feature_x
+```
+
+If you already have a local branch set to track `feature_x` then just do:
+```shell
+$ git rebase feature_x
+```
 
 
 ### Manually set tracking.
+
 `git config branch.<local_branch>.remote origin`<br>
 `git config branch.<local_branch>.merge refs/heads/<remote_branch>`
 
