@@ -243,6 +243,34 @@ $ git push origin :<remote_branch>
 ```
 
 
+### [Stashing](https://www.kernel.org/pub/software/scm/git/docs/git-stash.html)
+
+Sometimes you need to stash your changes so you can be on a clean branch or maybe because you want to go back and try something before you make a commit with these changes. Here's how you do a stash:
+```shell
+$ git stash
+```
+
+Now, if you want to unstash those changes and bring them back into your working directory:
+```shell
+$ git stash pop
+```
+
+Or maybe you want to unstash your changes without popping them off the stack. In other words, you might want to apply these stashed changes multiple times. To do this:
+```shell
+$ git stash apply
+```
+
+For a list of stashes:
+```shell
+$ git stash list
+```
+
+And to apply a specific stash from that list (e.g., stash@{3}):
+```shell
+$ git stash apply stash@{3}
+```
+
+
 ### [Checkout as CRLF, Commit as LF](https://www.kernel.org/pub/software/scm/git/docs/git-config.html)
 ```shell
 $ git config --global core.autocrlf true
