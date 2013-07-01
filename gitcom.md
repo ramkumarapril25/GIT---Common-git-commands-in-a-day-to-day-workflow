@@ -87,9 +87,26 @@ $ git unstage .
 
 Commit often. You can always squash down your commits before a push.
 ```shell
-$ git commit 
+$ git commit -m "Fixed IE issues"
+```
 
-### [Push](file:///C:/Users/Jed/AppData/Local/GitHub/PortableGit_ca477551eeb4aea0e4ae9fcd3358bd96720bb5c8/doc/git/html/git-push.html)
+Want to automatically stage files that have been modified and deleted, but new files you haven't told git about will be unaffected? Pass the `-a` or `--all` option flag:
+```shell
+$ git commit -am "Fixed IE issues"
+```
+
+
+### [Squashing Commits](https://www.kernel.org/pub/software/scm/git/docs/git-rebase.html)
+
+Maybe you have 4 commits, but you haven't pushed anything yet and you want to put everything into one commit so your boss doesn't have to read a bunch of garbage during code review.
+```shell
+$ git rebase -i HEAD~4
+```
+
+An interactive text file is displayed. You'll see the word "pick" to the left of each commit. Leave the one at the top alone and replace all the others with "s" for squash, save and close the file. This will display another interactive window where you can update your commit messages into one new commit message. I like to use "f" instead of "s", because I usually work in such a way that I name my first commit appropriately from the get-go. "f" just skips the 2nd interactive file and uses the first commit message.
+
+
+### [Pushing](https://www.kernel.org/pub/software/scm/git/docs/git-push.html)
 ```shell
 $ git push origin master
 
