@@ -37,7 +37,7 @@ $ git fetch upstream
 ```
 
 
-## Every-day Commands
+## Every-day Workflow
 
 
 ### [Branching](https://www.kernel.org/pub/software/scm/git/docs/git-checkout.html)
