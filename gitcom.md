@@ -2,30 +2,43 @@
 
 ## Initial Setup
 
+
 ### [Initialize a repo](https://www.kernel.org/pub/software/scm/git/docs/git-init.html)
+
 Create an empty git repo or reinitialize an existing one
 ```shell
 $ git init
 ```
 
 ### [Fork a repo](https://help.github.com/articles/fork-a-repo#step-1-fork-the-spoon-knife-repository)
+
 Click the "Fork" button at the top-right of any repository's GitHub page.
 
+
 ### [Clone a repo](https://www.kernel.org/pub/software/scm/git/docs/git-clone.html)
+
 Clone the codepainter repo into a new directory called codepainter:
 ```shell
 $ git clone https://github.com/jedhunsaker/codepainter.git codepainter
 ```
 
+
 ### [Setup Remotes](https://help.github.com/articles/fork-a-repo#step-3-configure-remotes)
+
+First, let's see a list of the repositories (remotes) whose branches you track:
 ```shell
 $ git remote -v
+```
+
+Oh, it looks like we haven't setup upstream. Now is the time:
+```shell
 $ git remote add upstream https://github.com/username/codepainter.git
 $ git fetch upstream
 ```
 
 
 ## Every-day Commands
+
 
 ### [Branching](https://www.kernel.org/pub/software/scm/git/docs/git-checkout.html)
 
@@ -75,6 +88,7 @@ You can stage inidividual files or all files at once.
 $ git add foo.js
 $ git add .
 ```
+
 
 ### [Unstaging Changes](http://stackoverflow.com/questions/348170/undo-git-add-before-commit)
 
@@ -126,6 +140,14 @@ $ git push origin <local_branch>:<remote_branch>
 Use the `-f` option flag to force it.
 
 
+### Undo Last Push
+
+Some would say this is bad practice. Once you push something you shouldn't overwrite those changes. Instead, you're supposed to create a new commit that reverts the changes in the last one. So, technically, you shouldn't do this, but... you can?
+```shell
+$ git reset --hard HEAD~1 && git push -f origin master
+```
+
+
 ### [Fetching](https://www.kernel.org/pub/software/scm/git/docs/git-fetch.html)
 
 Fetch changes from upstream:
@@ -162,6 +184,7 @@ $ git pull origin/feature_x
 
 Rebasing is a way of rewriting history. In place of merge, what this does is stacks your commits on top of commits that are already pushed up. In this case, you want to stack your commits on top of `origin/feature_x`:
 ```shell
+$ git fetch origin
 $ git rebase origin/feature_x
 ```
 
@@ -170,30 +193,29 @@ If you already have a local branch set to track `feature_x` then just do:
 $ git rebase feature_x
 ```
 
+Would you like to fetch, merge and then stack your changes on top, all in one shot? You can! If you have tracking setup on the current branch, just do:
+```shell
+$ git pull --rebase
+```
 
-### Manually set tracking.
+Another great use of rebasing is just rewriting commit messages. To get an interactive text editor for the most recent commit, do:
+```shell
+$ git rebase -i HEAD~1
+```
 
-`git config branch.<local_branch>.remote origin`<br>
-`git config branch.<local_branch>.merge refs/heads/<remote_branch>`
+Now, you can replace "pick" with "r" and just change the commit message.
 
-### Do a pull, stacking your recent commits on TOP of the pulled commits.
-`git pull --rebase`
 
-### Undo last push
-`git reset --hard HEAD~1 && git push -f origin master`
+### Manually Set Tracking
 
-### Rebase on upstream master
-`git fetch upstream && git rebase upstream/master`
-
-### List the set of repositories ("remotes") whose branches you track.
-`git remote -v`
-
-### Checkout as CRLF, Commit as LF
-`git config --global core.autocrlf true`
+Perhaps you forgot to setup tracking when you pulled down a remote branch. No worries:
+```shell
+$ git config branch.<local_branch>.remote origin
+$ git config branch.<local_branch>.merge refs/heads/<remote_branch>
 ```
 
 
-### [Deleting Branches]()
+### [Deleting Branches](https://www.kernel.org/pub/software/scm/git/docs/git-branch.html)
 
 Delete a local branch:
 ```shell
@@ -205,4 +227,10 @@ Use the `-D` option flag to force it.
 Delete a remote branch on origin:
 ```shell
 $ git push origin :<remote_branch>
+```
+
+
+### Checkout as CRLF, Commit as LF
+```shell
+$ git config --global core.autocrlf true
 ```
