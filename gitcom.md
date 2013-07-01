@@ -206,7 +206,7 @@ $ git rebase -i HEAD~1
 Now, you can replace "pick" with "r" and just change the commit message.
 
 
-### Manually Set Tracking
+### [Manually Set Tracking](https://www.kernel.org/pub/software/scm/git/docs/git-config.html)
 
 Perhaps you forgot to setup tracking when you pulled down a remote branch. No worries:
 ```shell
@@ -230,7 +230,7 @@ $ git push origin :<remote_branch>
 ```
 
 
-### Checkout as CRLF, Commit as LF
+### [Checkout as CRLF, Commit as LF](https://www.kernel.org/pub/software/scm/git/docs/git-config.html)
 ```shell
 $ git config --global core.autocrlf true
 ```
