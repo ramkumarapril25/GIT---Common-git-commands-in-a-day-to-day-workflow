@@ -51,6 +51,8 @@ Now, you can easily switch between branches with git checkout.
 $ git checkout master
 $ git checkout develop
 $ git checkout feature_x
+$ git config --global alias.co 'checkout'
+$ git co master
 ```
 
 ### [Status](https://www.kernel.org/pub/software/scm/git/docs/git-status.html)
@@ -70,9 +72,16 @@ $ git add foo.js
 $ git add .
 ```
 
-### [Unstaging Changes]()
+### [Unstaging Changes](http://stackoverflow.com/questions/348170/undo-git-add-before-commit)
 
 Maybe you accidentally staged some files that you don't want to commit.
+```shell
+$ git reset HEAD foo.js
+$ git reset HEAD .
+$ git config --global alias.unstage 'reset HEAD'
+$ git unstage .
+```
+
 
 ### [Commits](https://www.kernel.org/pub/software/scm/git/docs/git-commit.html)
 
