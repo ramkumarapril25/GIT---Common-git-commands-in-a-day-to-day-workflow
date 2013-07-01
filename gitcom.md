@@ -53,15 +53,26 @@ $ git checkout develop
 $ git checkout feature_x
 ```
 
+### [Status](https://www.kernel.org/pub/software/scm/git/docs/git-status.html)
+
+Not sure if you're working on a clean branch? Want to see what files have changed? Git status will show you a report.
+```shell
+$ git status
+```
+
 ### [Staging Changes](https://www.kernel.org/pub/software/scm/git/docs/git-add.html)
 
-Now that you've added or modified some files, you need to stage those commits into "the staging area." Think of the staging area like an airlock on a space ship. You put your stuff in there and close the door on it, but it doesn't actually go out into space until you hit the red button.
+Now that you've added or modified some files, you need to stage those commits into "the staging area." Think of git commits like an array of airlock hatches on a space ship. On this space ship, you can only open the door to one airlock at a time. When you open the hatch, you can put stuff in or take stuff out at will. Not until you've closed the door have you committed those changes (git commit) and not until you hit the red button do all those hatches open up into space (git push).
 
 You can stage inidividual files or all files at once.
 ```shell
 $ git add foo.js
 $ git add .
 ```
+
+### [Unstaging Changes]()
+
+Maybe you accidentally staged some files that you don't want to commit.
 
 ### [Commits](https://www.kernel.org/pub/software/scm/git/docs/git-commit.html)
 
