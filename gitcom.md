@@ -17,7 +17,7 @@ Clone the codepainter repo into a new directory called codepainter:
 $ git clone https://github.com/jedhunsaker/codepainter.git codepainter
 ```
 
-### [setup remotes](https://help.github.com/articles/fork-a-repo#step-3-configure-remotes)
+### [Setup Remotes](https://help.github.com/articles/fork-a-repo#step-3-configure-remotes)
 ```shell
 $ git remote -v
 $ git remote add upstream https://github.com/username/codepainter.git
