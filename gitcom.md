@@ -39,7 +39,7 @@ If upstream has a special develop branch or something, you can check that branch
 $ git checkout -b develop --track upstream/develop
 ```
 
-Maybe you made some progress on a branch at home, but now you want to check it out at work. In that case, you're dealing with your own fork's branch, so you'll checkout from origin.
+Maybe you made some progress on a branch at work, but now you want to continue work at home. In that case, you're dealing with your own fork's branch, so you'll checkout from origin.
 ```shell
 $ git checkout -b feature_x --track origin/feature_x
 ```
@@ -53,7 +53,21 @@ $ git checkout develop
 $ git checkout feature_x
 ```
 
+### [Staging Changes](https://www.kernel.org/pub/software/scm/git/docs/git-add.html)
 
+Now that you've added or modified some files, you need to stage those commits into "the staging area." Think of the staging area like an airlock on a space ship. You put your stuff in there and close the door on it, but it doesn't actually go out into space until you hit the red button.
+
+You can stage inidividual files or all files at once.
+```shell
+$ git add foo.js
+$ git add .
+```
+
+### [Commits](https://www.kernel.org/pub/software/scm/git/docs/git-commit.html)
+
+Commit often. You can always squash down your commits before a push.
+```shell
+$ git commit 
 
 ### [Push](file:///C:/Users/Jed/AppData/Local/GitHub/PortableGit_ca477551eeb4aea0e4ae9fcd3358bd96720bb5c8/doc/git/html/git-push.html)
 ```shell
