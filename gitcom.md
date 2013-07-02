@@ -59,6 +59,11 @@ $ git checkout -b <new_branch_name> --track origin/<remote_branch_to_track>
 
 Use the `-B` option flag to force it.
 
+To see a list of available branches on your working directory:
+```shell
+$ git branch
+```
+
 
 ### [Switching Branches](https://www.kernel.org/pub/software/scm/git/docs/git-checkout.html)
 
