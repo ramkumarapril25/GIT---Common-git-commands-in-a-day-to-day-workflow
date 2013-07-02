@@ -65,6 +65,9 @@ Use the `-B` option flag to force it.
 First, you'll want to know what branches are available in your working directory:
 ```shell
 $ git branch
+  develop
+  feature_x
+  master
 ```
 
 Now, you can easily switch between branches with git checkout:
