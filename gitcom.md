@@ -289,5 +289,5 @@ $ git config --global core.autocrlf true
 
 Once you're comfortable with what the above commands are doing, you might want to create some shortcuts for Git Bash. This allows you to work a lot faster by doing complex tasks in really short commands.
 
-Refer to my [.bashrc Gist](https://gist.github.com/jedhunsaker/1deb357e54b3daf5856c) for a good list of useful shortcuts.
+Refer to my [.bashrc Gist](https://gist.github.com/jedmao/1deb357e54b3daf5856c#file-bashrc) for a good list of useful shortcuts.
 
