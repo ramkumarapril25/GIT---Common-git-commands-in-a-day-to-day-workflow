@@ -17,9 +17,9 @@ Click the "Fork" button at the top-right of any repository's GitHub page.
 
 ### [Clone a repo](https://www.kernel.org/pub/software/scm/git/docs/git-clone.html)
 
-Clone the codepainter repo into a new directory called codepainter:
+Clone the foo repo into a new directory called foo:
 ```shell
-$ git clone https://github.com/jedhunsaker/codepainter.git codepainter
+$ git clone https://github.com/<username>/foo.git foo
 ```
 
 
@@ -32,7 +32,7 @@ $ git remote -v
 
 Oh, it looks like we haven't setup upstream. Now is the time:
 ```shell
-$ git remote add upstream https://github.com/username/codepainter.git
+$ git remote add upstream https://github.com/<upstream_username>/<repo_name>.git
 $ git fetch upstream
 ```
 
@@ -113,12 +113,12 @@ $ git unstage .
 
 Commit often. You can always squash down your commits before a push.
 ```shell
-$ git commit -m "Fixed IE issues"
+$ git commit -m "Updated README"
 ```
 
 Want to automatically stage files that have been modified and deleted, but new files you haven't told git about will be unaffected? Pass the `-a` or `--all` option flag:
 ```shell
-$ git commit -am "Fixed IE issues"
+$ git commit -am "Updated README"
 ```
 
 
