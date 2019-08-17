@@ -40,27 +40,32 @@ $ git fetch upstream
 ## Every-day Workflow
 
 
-### [Branching](https://www.kernel.org/pub/software/scm/git/docs/git-checkout.html)
+### [Branching](https://git-scm.com/docs/git-switch)
 
 When working on a fork, you could be switching between different branches quite commonly. As such, you generally want to stay off the master branch and work on your own feature branches so that master is always clean and you can base new branches off of it.
 ```shell
-$ git checkout -b <new_branch_name>
+$ git switch -c <new-branch-name>
 ```
 
 If upstream has a special develop branch or something, you can checkout that branch separately, but setup tracking so you can sync it up from time to time. Like the master branch, don't work directly on this one. Try to keep it clean.
-```shell
-$ git checkout -b <new_branch_name> --track upstream/<remote_branch_to_track>
+```shell 
+$ git switch -c <new-branch-name> --track upstream/<remote-branch-to-track>
 ```
 
 Maybe you made some progress on a branch at work, but now you want to continue work at home. In that case, you're dealing with your own fork's branch, so you'll checkout from origin.
 ```shell
-$ git checkout -b <new_branch_name> --track origin/<remote_branch_to_track>
+$ git switch -c <new-branch-name> --track origin/<remote-branch-to-track>
 ```
 
-Use the `-B` option flag to force it.
+If you're using the same name as a remote branch name, this can be simplified:
+```shell
+$ git switch -c <branch-name>
+```
+
+Use the `-C` option flag to force it.
 
 
-### [Switching Branches](https://www.kernel.org/pub/software/scm/git/docs/git-checkout.html)
+### [Switching Branches](https://git-scm.com/docs/git-switch)
 
 First, you'll want to know what branches are available in your working directory:
 ```shell
@@ -70,13 +75,13 @@ $ git branch
   master
 ```
 
-Now, you can easily switch between branches with git checkout:
+Now, you can easily switch between branches with `git switch`:
 ```shell
-$ git checkout master
-$ git checkout develop
-$ git checkout feature_x
-$ git config --global alias.co 'checkout'
-$ git co master
+$ git switch master
+$ git switch develop
+$ git switch feature_x
+$ git config --global alias.sw 'switch'
+$ git sw master
 ```
 
 
