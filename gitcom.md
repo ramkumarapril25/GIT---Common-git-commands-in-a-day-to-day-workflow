@@ -103,14 +103,12 @@ $ git add .
 ```
 
 
-### [Unstaging Changes](http://stackoverflow.com/questions/348170/undo-git-add-before-commit)
+### [Unstaging Changes / Restoring Files](https://git-scm.com/docs/git-restore)
 
 Maybe you accidentally staged some files that you don't want to commit.
 ```shell
-$ git reset HEAD foo.js
-$ git reset HEAD .
-$ git config --global alias.unstage 'reset HEAD'
-$ git unstage .
+$ git restore foo.js
+$ git restore .
 ```
 
 
