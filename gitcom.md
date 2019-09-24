@@ -287,6 +287,39 @@ $ git stash apply stash@{3}
 $ git config --global core.autocrlf true
 ```
 
+## Tagging
+
+### Fetch
+
+```shell
+$ git fetch --tags
+```
+
+### Create
+
+```shell
+$ git tag -a v1.0.0 9fceb02 -m "Initial release"
+```
+
+Where `9fceb02` represents the commit hash.
+
+### Push
+
+```shell
+$ git push --tags
+```
+
+### Delete
+
+```shell
+$ git tag -d v1.0.0
+```
+
+#### Remote
+
+```shell
+$ git push origin :refs/tags/v1.0.0
+```
 
 ## Git Bash
 
