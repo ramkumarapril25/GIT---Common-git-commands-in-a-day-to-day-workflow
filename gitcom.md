@@ -156,6 +156,11 @@ $ git push --set-upstream origin <branch>
 $ git push
 ```
 
+Configure Git to [always push using the current branch name](https://git-scm.com/docs/git-config#Documentation/git-config.txt-pushdefault):
+```shell
+$ git config --global push.default current
+```
+
 Push a local branch to a different remote branch:
 ```shell
 $ git push origin <local_branch>:<remote_branch>
