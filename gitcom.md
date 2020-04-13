@@ -3,7 +3,7 @@
 ## Initial Setup
 
 
-### [Initialize a repo](https://www.kernel.org/pub/software/scm/git/docs/git-init.html)
+### [Initialize a repo](https://git-scm.com/docs/git-init)
 
 Create an empty git repo or reinitialize an existing one
 ```shell
@@ -15,7 +15,7 @@ $ git init
 Click the "Fork" button at the top-right of any repository's GitHub page.
 
 
-### [Clone a repo](https://www.kernel.org/pub/software/scm/git/docs/git-clone.html)
+### [Clone a repo](https://git-scm.com/docs/git-clone)
 
 Clone the foo repo into a new directory called foo:
 ```shell
@@ -23,7 +23,7 @@ $ git clone https://github.com/<username>/foo.git foo
 ```
 
 
-### [Setup Remotes](https://help.github.com/articles/fork-a-repo#step-3-configure-remotes)
+### [Setup Remotes](https://git-scm.com/docs/git-remote)
 
 First, let's see a list of the repositories (remotes) whose branches you track:
 ```shell
@@ -85,14 +85,14 @@ $ git sw master
 ```
 
 
-### [Status](https://www.kernel.org/pub/software/scm/git/docs/git-status.html)
+### [Status](https://git-scm.com/docs/git-status)
 
 Not sure if you're working on a clean branch? Want to see what files have changed? Git status will show you a report.
 ```shell
 $ git status
 ```
 
-### [Staging Changes](https://www.kernel.org/pub/software/scm/git/docs/git-add.html)
+### [Staging Changes](https://git-scm.com/docs/git-add)
 
 Now that you've added or modified some files, you need to stage those commits into "the staging area." Think of git commits like an array of airlock hatches on a space ship. On this space ship, you can only open the door to one airlock at a time. When you open the hatch, you can put stuff in or take stuff out at will. Not until you've closed the door have you committed those changes (git commit) and not until you hit the red button do all those hatches open up into space (git push).
 
@@ -112,7 +112,7 @@ $ git restore .
 ```
 
 
-### [Commits](https://www.kernel.org/pub/software/scm/git/docs/git-commit.html)
+### [Commits](https://git-scm.com/docs/git-commit)
 
 Commit often. You can always squash down your commits before a push.
 ```shell
@@ -125,7 +125,7 @@ $ git commit -am "Updated README"
 ```
 
 
-### [Undoing Commits](https://www.kernel.org/pub/software/scm/git/docs/git-reset.html)
+### [Undoing Commits](https://git-scm.com/docs/git-reset)
 
 The following command will undo your most recent commit and put those changes back into staging, so you don't lose any work:
 ```shell
@@ -138,7 +138,7 @@ $ git reset --hard HEAD~1
 ```
 
 
-### [Squashing Commits](https://www.kernel.org/pub/software/scm/git/docs/git-rebase.html)
+### [Squashing Commits](https://git-scm.com/docs/git-rebase)
 
 Maybe you have 4 commits, but you haven't pushed anything yet and you want to put everything into one commit so your boss doesn't have to read a bunch of garbage during code review.
 ```shell
@@ -148,7 +148,7 @@ $ git rebase -i HEAD~4
 An interactive text file is displayed. You'll see the word "pick" to the left of each commit. Leave the one at the top alone and replace all the others with "s" for squash, save and close the file. This will display another interactive window where you can update your commit messages into one new commit message. I like to use "f" instead of "s", because I usually work in such a way that I name my first commit appropriately from the get-go. "f" just skips the 2nd interactive file and uses the first commit message.
 
 
-### [Pushing](https://www.kernel.org/pub/software/scm/git/docs/git-push.html)
+### [Pushing](https://git-scm.com/docs/git-push)
 
 Push a local branch for the first time:
 ```shell
@@ -169,7 +169,7 @@ $ git push origin <local_branch>:<remote_branch>
 Use the `-f` option flag to force it.
 
 
-### [Undo Last Push](https://www.kernel.org/pub/software/scm/git/docs/git-reset.html)
+### [Undo Last Push](https://git-scm.com/docs/git-reset)
 
 Some would say this is bad practice. Once you push something you shouldn't overwrite those changes. Instead, you're supposed to create a new commit that reverts the changes in the last one. So, technically, you shouldn't do this, but... you can?
 ```shell
@@ -177,7 +177,7 @@ $ git reset --hard HEAD~1 && git push -f origin master
 ```
 
 
-### [Fetching](https://www.kernel.org/pub/software/scm/git/docs/git-fetch.html)
+### [Fetching](https://git-scm.com/docs/git-fetch)
 
 Fetch changes from upstream:
 ```shell
@@ -190,7 +190,7 @@ $ git fetch --multiple origin upstream
 ```
 
 
-### [Merging](https://www.kernel.org/pub/software/scm/git/docs/git-merge.html)
+### [Merging](https://git-scm.com/docs/git-merge)
 
 To be honest, I haven't used this command in quite some time. In my experience, it has created merge bubbles that have overwritten mine or others' code. For a better workflow, refer to rebasing, below.
 
@@ -209,7 +209,7 @@ $ git pull origin/feature_x
 ```
 
 
-### [Rebasing](https://www.kernel.org/pub/software/scm/git/docs/git-rebase.html)
+### [Rebasing](https://git-scm.com/docs/git-rebase)
 
 Rebasing is a way of rewriting history. In place of merge, what this does is stacks your commits on top of commits that are already pushed up. In this case, you want to stack your commits on top of `origin/feature_x`:
 ```shell
@@ -235,7 +235,7 @@ $ git rebase -i HEAD~1
 Now, you can replace "pick" with "r" and just change the commit message.
 
 
-### [Manually Set Tracking](https://www.kernel.org/pub/software/scm/git/docs/git-config.html)
+### [Manually Set Tracking](https://git-scm.com/docs/git-config#Documentation/git-config.txt-branchltnamegtremote)
 
 Perhaps you forgot to setup tracking when you pulled down a remote branch. No worries:
 ```shell
@@ -244,7 +244,7 @@ $ git config branch.<local_branch>.merge refs/heads/<remote_branch>
 ```
 
 
-### [Deleting Branches](https://www.kernel.org/pub/software/scm/git/docs/git-branch.html)
+### [Deleting Branches](https://git-scm.com/docs/git-branch#Documentation/git-branch.txt--d)
 
 Delete a local branch:
 ```shell
@@ -259,7 +259,7 @@ $ git push origin :<remote_branch>
 ```
 
 
-### [Stashing](https://www.kernel.org/pub/software/scm/git/docs/git-stash.html)
+### [Stashing](https://git-scm.com/docs/git-stash)
 
 Sometimes you need to stash your changes so you can be on a clean branch or maybe because you want to go back and try something before you make a commit with these changes. Here's how you do a stash:
 ```shell
@@ -286,21 +286,15 @@ And to apply a specific stash from that list (e.g., stash@{3}):
 $ git stash apply stash@{3}
 ```
 
-
-### [Checkout as CRLF, Commit as LF](https://www.kernel.org/pub/software/scm/git/docs/git-config.html)
-```shell
-$ git config --global core.autocrlf true
-```
-
 ## Tagging
 
-### Fetch
+### [Fetch](https://git-scm.com/docs/git-fetch#Documentation/git-fetch.txt--t)
 
 ```shell
 $ git fetch --tags
 ```
 
-### Create
+### [Create](https://git-scm.com/docs/git-tag)
 
 ```shell
 $ git tag -a v1.0.0 9fceb02 -m "Initial release"
@@ -308,19 +302,19 @@ $ git tag -a v1.0.0 9fceb02 -m "Initial release"
 
 Where `9fceb02` represents the commit hash.
 
-### Push
+### [Push](https://git-scm.com/docs/git-push#Documentation/git-push.txt---tags)
 
 ```shell
 $ git push --tags
 ```
 
-### Delete
+### [Delete](https://git-scm.com/docs/git-tag#Documentation/git-tag.txt--d)
 
 ```shell
 $ git tag -d v1.0.0
 ```
 
-#### Remote
+#### [Remote](https://git-scm.com/docs/git-push)
 
 ```shell
 $ git push origin :refs/tags/v1.0.0
@@ -331,4 +325,3 @@ $ git push origin :refs/tags/v1.0.0
 Once you're comfortable with what the above commands are doing, you might want to create some shortcuts for Git Bash. This allows you to work a lot faster by doing complex tasks in really short commands.
 
 Refer to my [.bashrc Gist](https://gist.github.com/jedmao/1deb357e54b3daf5856c#file-bashrc) for a good list of useful shortcuts.
-
